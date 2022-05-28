@@ -88,12 +88,12 @@ const LOAN_OFFER_TEMPLATE = HANDLEBARS.compile(SOURCE);
 function render(template, data) {
   let html = template(data);
   return html;
-};
+}
 
 function getParams(path) {
   const myURL = new URL(path, `http://localhost:${PORT}`);
   return myURL.searchParams;
-};
+}
 
 function calculateLoan(amount, duration, apr) {
   let annualInterestRate = apr / 100;
@@ -104,7 +104,7 @@ function calculateLoan(amount, duration, apr) {
           (1 - Math.pow((1 + monthlyInterestRate),(-months))));
 
   return payment.toFixed(2);
-};
+}
 
 function createLoanOffer(params) {
   const APR = 5;
@@ -120,7 +120,7 @@ function createLoanOffer(params) {
   data.payment = calculateLoan(data.amount, data.duration, APR);
 
   return data;
-};
+}
 
 const SERVER = HTTP.createServer((req, res) => {
   let method = req.method;
