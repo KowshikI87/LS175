@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable max-lines-per-function */
 const express = require("express");
 const morgan = require("morgan");
 const { body, validationResult } = require("express-validator");
